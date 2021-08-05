@@ -1,0 +1,43 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block styles %}
+{{ super() }}
+	<style>
+		body {
+		  background: oldlace;
+		  color: teal;
+		}
+		#title {
+		  text-align:center;
+		}
+		#credit {
+		    padding-top:20px;
+		    color:black;
+		    font-size:10px;
+		}
+	</style>
+{% endblock %}
+
+
+{% block title %}
+MyTranslate
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class='col-md pt-5'>
+      <h1 class='pb-2' id=title>Welcome to MyTranslate!</h1>
+      {{ wtf.quick_form(form) }}
+      <p class="pt-5"><strong>{{ message }}</strong></p>
+      <p>{{ result.text }}</p>
+    </div>
+  </div>
+  <p id = credit>Made By Venkat Guru Prasad, Missisauga, CA</p>
+</div>
+
+{% endblock %}
+
